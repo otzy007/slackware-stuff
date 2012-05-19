@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# Use the Fn-F2 combination to disable/enable wireless on Asus K52
+
 WLANSTATUS=`cat /sys/class/ieee80211/phy0/rfkill*/state`
 
 test -z $WLANSTATUS && exit 1
