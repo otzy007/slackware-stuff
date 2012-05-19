@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Convert movies into DivX format for LG KU990 Viewty 
+#
+ffmpeg -i $1 -vcodec mpeg4 -s 400x240 -acodec libmp3lame -ab 128k -vtag DIVX $2
