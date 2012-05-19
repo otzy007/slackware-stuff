@@ -1,0 +1,58 @@
+#!/bin/bash
+case "$1" in
+start)
+#stergere chain-uri
+iptables -F
+
+
+#accepta doar trafic catre ssh, http, https, yahoo messenger, dns, imap, smtp
+iptables -I INPUT -p tcp --sport 5050 -i wlan0 -j ACCEPT
+iptables -I INPUT -p tcp --sport 22 -i wlan0 -j ACCEPT
+iptables -I INPUT -p tcp --sport 443 -i wlan0 -j ACCEPT
+iptables -I INPUT -p tcp --sport 80 -i wlan0 -j ACCEPT
+iptables -I INPUT -p tcp --sport 53 -i wlan0 -j ACCEPT
+iptables -I INPUT -p udp --sport 53 -i wlan0 -j ACCEPT
+
+# accept rmtp (video streaming flash)
+iptables -I INPUT -p tcp --sport 1935 -i wlan0 -j ACCEPT
+iptables -I INPUT -p udp --sport 1935 -i wlan0 -j ACCEPT
+
+# gtalk
+iptables -I INPUT -p tcp --sport 5222 -i wlan0 -j ACCEPT
+
+# imap
+iptables -I INPUT -p tcp --sport 993 -i wlan0 -j ACCEPT
+iptables -I INPUT -p tcp --sport 143 -i wlan0 -j ACCEPT
+
+# smtp
+iptables -I INPUT -p tcp --sport 465 -i wlan0 -j ACCEPT
+
+# upnp
+iptables -I INPUT -p udp --sport 1900 -i wlan0 -j ACCEPT
+iptables -I INPUT -p tcp --sport 2860 -i wlan0 -j ACCEPT
+
+# torrent 
+iptables -I INPUT -p tcp --dport 6881 -i wlan0 -j ACCEPT
+iptables -I INPUT -p udp --dport 6881 -i wlan0 -j ACCEPT
+iptables -I INPUT -p udp --dport 7881 -i wlan0 -j ACCEPT
+iptables -I INPUT -p udp --dport 8881 -i wlan0 -j ACCEPT
+iptables -I INPUT -p tcp --sport 5500 -i wlan0 -j ACCEPT
+
+# rsync
+iptables -I INPUT -p tcp --sport 873 -i wlan0 -j ACCEPT
+
+# ssh
+iptables -I INPUT -p tcp --sport 22 -i wlan0 -j ACCEPT
+
+# git
+iptables -I INPUT -p tcp --sport 9418 -i wlan0 -j ACCEPT
+
+#blocheaza tot traficul
+iptables -A INPUT -p all -i wlan0 -j DROP
+
+;;
+stop)
+iptables -F
+;;
+*)
+esac

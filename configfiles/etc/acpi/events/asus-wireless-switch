@@ -1,0 +1,2 @@
+event=hotkey ATKD 0000005d
+action=/etc/acpi/asus-wireless-switch.sh

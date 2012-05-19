@@ -1,0 +1,14 @@
+[Dialer Defaults]
+Phone = *99#
+Username = null
+Password = null
+Stupid Mode = 1
+Dial Command = ATDT
+Modem = /dev/ttyUSB2
+Baud = 115200
+Init = ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+ISDN = 0
+Auto Reconnect = off
+Check DNS = off
+Dial Attempts = 1
+Modem Type = Analog Modem
