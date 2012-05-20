@@ -1,0 +1,3 @@
+[submodule "enable-zRam-in-Slackware"]
+	path = enable-zRam-in-Slackware
+	url = git://github.com/otzy007/enable-zRam-in-Slackware.git
