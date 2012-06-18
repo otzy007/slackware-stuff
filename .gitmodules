@@ -1,3 +1,6 @@
 [submodule "enable-zRam-in-Slackware"]
 	path = enable-zRam-in-Slackware
 	url = git://github.com/otzy007/enable-zRam-in-Slackware.git
+[submodule "vim-rails"]
+	path = vim-rails
+	url = git://github.com/tpope/vim-rails.git
