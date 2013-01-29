@@ -1,0 +1,14 @@
+[Dialer Defaults]
+Modem= /dev/rfcomm0
+Baud= 115200
+Init1= AT+CGDCONT=1,"IP","net"
+Username = null
+Password = null
+ISDN = 0
+Phone= *99***1#
+Dial Command = ATDT
+Stupid Mode = 1
+Compuserve =0
+Idle Seconds = 0
+Auto DNS = 1
+Check Def Route = 1
